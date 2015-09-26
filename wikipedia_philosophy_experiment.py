@@ -59,7 +59,8 @@ def a(topic, orig_input, step_count, words_used):
             link_href = link.get('href').lower()
             link_text = link.getText(separator=u' ')
             if link_href.startswith('/wiki/'):
-                if not link_href.startswith('/wiki/help') and not link_href.startswith('/wiki/wikipedia:'):
+                if not link_href.startswith('/wiki/help') and not link_href.startswith('/wiki/wikipedia:')\
+                        and not link_href.startswith('/wiki/file:'):
                     step_count += 1
                     print 'Jump ' + str(step_count) + ': ' + link_text
                     for word in words_used:
